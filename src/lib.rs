@@ -110,10 +110,7 @@ impl Display for Comparison {
 
 #[macro_export]
 macro_rules! assert_eq {
-    ($left:expr , $right:expr,) => ({
-        assert_eq!($left, $right)
-    });
-    ($left:expr , $right:expr) => ({
+    ($left:expr , $right:expr $(,)?) => ({
         match (&($left), &($right)) {
             (left_val, right_val) => {
                 if !(*left_val == *right_val) {
